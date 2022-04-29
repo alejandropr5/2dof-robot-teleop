@@ -1,0 +1,11 @@
+<launch>
+    <!-- Load controller configurations from YAML file to parameter server -->
+    <rosparam command="load"
+        file="$(find teleoperation_lab1)/config/controllers.yaml"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/robot2DoF" args="joint_state_controller
+                                            joint1_position_controller
+                                            joint2_velocity_controller"/>
+</launch>

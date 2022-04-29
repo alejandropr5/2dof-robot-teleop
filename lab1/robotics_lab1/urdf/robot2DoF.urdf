@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<robot name="robot2DoF">
+	<link name="world"/>
+	<link name="base_link">
+   		<visual>
+     			<geometry>
+       				<box size="0.5 0.5 0.2"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0.1"/>
+   		</visual>
+   		<collision>
+     			<geometry>
+       				<box size="0.5 0.5 0.2"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0.1"/>
+   		</collision>
+   		<inertial>
+			<mass value="10"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+ 	</link>
+ 	<link name="link1">
+   		<visual>
+     			<geometry>
+       				<box size="0.2 0.2 0.8"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 -0.4"/>
+		</visual>
+		<collision>
+     			<geometry>
+       				<box size="0.2 0.2 0.8"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 -0.4"/>
+		</collision>
+		<inertial>
+			<mass value="5"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+ 	</link>
+ 	<link name="link2">
+   		<visual>
+     			<geometry>
+       				<box size="0.2 0.2 1.0"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0.1 0.0 0.4"/>
+   		</visual>
+   		<collision>
+     			<geometry>
+       				<box size="0.2 0.2 1.0"/>
+     			</geometry>
+			<origin rpy="0 0 0" xyz="0.1 0.0 0.4"/>
+   		</collision>
+   		<inertial>
+			<mass value="5"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+ 	</link>
+ 	<joint name="joint0" type="fixed">
+   		<parent link="world"/>
+   		<child link="base_link"/>
+   		<origin xyz="0 0 0"/>
+ 	</joint>
+ 	<joint name="joint1" type="continuous">
+   		<parent link="base_link"/>
+   		<child link="link1"/>
+   		<origin xyz="0 0 1.0"/>
+   		<axis xyz="0 0 1"/>
+ 	</joint>
+ 	<joint name="joint2" type="prismatic">
+   		<parent link="link1"/>
+   		<child link="link2"/>
+   		<origin rpy="0 1.5708 0" xyz="0.0 0.0 0.0"/>
+   		<axis xyz="0 0 1"/>
+   		<limit effort ="1000.0" lower="-0.8" upper="0.0" velocity="0.5"/>
+ 	</joint>
+
+	 <!-- Transmissions -->
+	<transmission name="transmission1">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint1">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="motor1">
+    		<mechanicalReduction>1</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  		</actuator>
+	</transmission>
+
+	<transmission name="transmission2">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="motor2">
+    		<mechanicalReduction>1</mechanicalReduction>
+    		<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+  		</actuator>
+	</transmission>
+
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/robot2DoF</robotNamespace>
+		</plugin>
+  	</gazebo>
+
+</robot>
