@@ -1,6 +1,0 @@
-<launch>
-    <include file="$(find robotics_lab1)/launch/display.launch"/>
-    <include file="$(find teleoperation_lab1)/launch/robot2DoF_control.launch"/>
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-	args="-urdf -model robot2DoF -param robot_description"/> 
-</launch>
