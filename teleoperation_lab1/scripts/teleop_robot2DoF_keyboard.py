@@ -128,12 +128,7 @@ class PublishThread(threading.Thread):
                 (xState,yState)=joints2coor(self.q1State,self.q2State)
                 (self.q1State,self.q2State)=coor2joints(xState-self.x*self.efSpeed,yState+self.y*self.efSpeed)
 
-                if self.q2State<-0.8:
-                    (self.q1State,self.q2State)=coor2joints(xState,yState)
-                    if not isPrinted:
-                        print(alertMsg,end='\n\r')
-                        isPrinted=True
-                elif self.q2State>0.0:
+                if self.q2State<-0.8 or self.q2State>0.0:
                     (self.q1State,self.q2State)=coor2joints(xState,yState)
                     if not isPrinted:
                         print(alertMsg,end='\n\r')
@@ -336,6 +331,8 @@ if __name__=="__main__":
                         "q1" : 0,
                         "q2" : 0
                     }
+                    x = 0
+                    y = 0
                     print(msg)
                     print(efVel(efSpeed))
                     status=0
