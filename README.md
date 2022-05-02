@@ -1,5 +1,5 @@
 # ROS Noetic packages for Robotics Laboratory
-## The laboratory consists on develop the teleoperation of a 2 degree robot 
+## The laboratory consists on develop the teleoperation of a 2 degree polar robot 
 
 ## Intalation
 
