@@ -7,5 +7,12 @@
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
         output="screen" ns="/robot2DoF" args="joint_state_controller
                                             joint1_position_controller
-                                            joint2_velocity_controller"/>
+                                            joint2_position_controller"/>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        ns="robot2DoF" respawn="false" output="screen">
+        <remap from="/joint_states" to="/robot2DoF/joint_states" />
+    </node>
+
 </launch>

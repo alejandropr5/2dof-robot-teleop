@@ -8,9 +8,9 @@ robot2DoF:
   joint1_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 80.0, i: 10, d: 40.0}
 
-  joint2_velocity_controller:
-    type: velocity_controllers/JointPositionController
+  joint2_position_controller:
+    type: effort_controllers/JointPositionController
     joint: joint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 80.0, i: 10, d: 40.0}

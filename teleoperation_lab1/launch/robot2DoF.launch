@@ -1,6 +1,7 @@
 <launch>
-    <include file="$(find robotics_lab1)/launch/display.launch"/>
+    <arg name="model" default="robot2DoF"/>
+    <arg name="rvizconfig" default="$(find teleoperation_lab1)/rviz/$(arg model).rviz" />
+    <include file="$(find teleoperation_lab1)/launch/robot2DoF_gazebo.launch"/>
     <include file="$(find teleoperation_lab1)/launch/robot2DoF_control.launch"/>
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-	args="-urdf -model robot2DoF -param robot_description"/> 
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 </launch>
