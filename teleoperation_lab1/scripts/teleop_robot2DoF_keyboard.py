@@ -28,7 +28,7 @@ Moving each joint:
 
 s   : stop
 0   : return to robot's starting position (HOME)
-q/z : increase/decrease ende efector speed by 10%
+q/z : increase/decrease end efector speed by 10%
 CTRL-C to quit
 """
 
