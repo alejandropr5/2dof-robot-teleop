@@ -10,7 +10,7 @@ To build the packages in this repository follow these steps:
 1. Clone this repository in the `src` folder of your ROS Noetic [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace):
 
    ```console
-   catkin_ws/src$ git clone https://github.com/alejandropr5/lab1.git
+   git clone https://github.com/alejandropr5/lab1.git
    ```
 2. Install the requried binary dependencies of all packages in the catkin workspace using the following [`rosdep` command](http://wiki.ros.org/rosdep#Install_dependency_of_all_packages_in_the_workspace):
 
@@ -21,7 +21,7 @@ To build the packages in this repository follow these steps:
 3. After installing the required dependencies build the catkin workspace, either with [`catkin_make`](http://wiki.ros.org/catkin/commands/catkin_make):
 
    ```console
-   catkin_ws$ catkin_make
+   catkin_make
    ```
 ## Usage
 
