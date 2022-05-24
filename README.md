@@ -5,7 +5,7 @@
 
 ### :hammer: How to Build
 
-To build the packages in this repository including the Remo robot follow these steps:
+To build the packages in this repository follow these steps:
 
 1. Clone this repository in the `src` folder of your ROS Noetic [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace):
 
