@@ -1,7 +1,7 @@
 # ROS Noetic packages for Robotics Laboratory
 ## The laboratory consists on develop the teleoperation of a 2 degree cylindrical robot 
 
-## Intalation
+## Instalation
 
 ### :hammer: How to Build
 
