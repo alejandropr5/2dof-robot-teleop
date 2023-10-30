@@ -1,4 +1,5 @@
-# ROS Noetic packages for teleoperation of a 2 degree cylindrical robot
+# ROS Noetic packages for 2dof-robot-teleop
+## The repo consists on develop the teleoperation of a 2 degree cylindrical robot 
 
 ## Instalation
 
@@ -9,7 +10,7 @@ To build the packages in this repository follow these steps:
 1. Clone this repository in the `src` folder of your ROS Noetic [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace):
 
    ```console
-   git clone https://github.com/alejandropr5/lab1.git
+   git clone https://github.com/alejandropr5/2dof-robot-teleop.git
    ```
 2. Install the requried binary dependencies of all packages in the catkin workspace using the following [`rosdep` command](http://wiki.ros.org/rosdep#Install_dependency_of_all_packages_in_the_workspace):
 
