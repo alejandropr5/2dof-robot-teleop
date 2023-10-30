@@ -1,5 +1,4 @@
-# ROS Noetic packages for Robotics Laboratory
-## The laboratory consists on develop the teleoperation of a 2 degree cylindrical robot 
+# ROS Noetic packages for teleoperation of a 2 degree cylindrical robot
 
 ## Instalation
 
